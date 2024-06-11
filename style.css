@@ -18,7 +18,6 @@
 .container {
     display: flex;
     flex-direction: column;
-
 }
 
 .container>.nav {
@@ -32,6 +31,52 @@
 .container>.nav>.first_nav {
     display: flex;
     gap: 10px;
+}
+
+.container>.nav>.first_nav>.menu {
+    display: none;
+}
+
+@media screen and (max-width:480px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .container>.nav>.first_nav>.menu {
+        display: block;
+    }
+    .container>.nav>.first_nav>.link> {
+        width: 100%;
+        height: 100%;
+        background-color: blue;
+    }
+    .container>.nav>.first_nav>.link>.close {
+        display: block;
+    }
+    .container>.nav>.first_nav>.link>ul {
+       display: flex;
+       flex-direction: column;   
+       height: 100%;
+        width: 70%;
+        z-index: 999px;
+        background-color: red;
+        top: 0;
+        left: 0;
+        position: fixed;
+        padding: 10px 0px  10px;
+
+    }
+    .container>.nav>.first_nav>.link>ul>li>a{
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+}
+
+.container>.nav>.first_nav>.link>.close {
+    display: none;
 }
 
 .container>.nav>.first_nav>.link>ul {
@@ -64,7 +109,8 @@
     width: 100px;
     height: 100px;
 }
-.container>.nav>.nav_icon>.num{
+
+.container>.nav>.nav_icon>.num {
     width: 15px;
     height: 10px;
     background-color: var(--Orange);
@@ -82,6 +128,10 @@
     display: none;
 }
 
+/* .container>.nav>.nav_icon>.num:hover{
+    display:flex;
+} */
+
 .container>.nav>.nav_icon>img {
     width: 50px;
     height: 50px;
@@ -89,9 +139,6 @@
 
 .container>.nav>.nav_icon>svg:hover {
     cursor: pointer;
-    /* .container>.nav>.nav_icon>.num{
-        display: block;
-    } */
 }
 
 .container>.nav>.nav_icon>img:hover {
@@ -99,14 +146,27 @@
     border-radius: 50%;
     cursor: pointer;
 }
+@media screen and (max-width:480px) {
+    .container> .cart{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        right: 0;
+        left: 0;
+    }
+    .container>.cart>#cart-root{
+        width: 500px;
+        height: 210px;
+    }
 
+}
 .container>.cart {
-    width: 250px;
+    /* width: 250px; */
     height: 210px;
     background-color: var(--White);
-    box-shadow: 3px 3px 10px 0px var(--Black),-3px -3px 10px 0px;
+    box-shadow: 3px 3px 10px 0px var(--Black), -3px -3px 10px 0px;
     margin-right: 0;
-    position:absolute;
+    position: absolute;
     right: 70px;
     top: 90px;
     z-index: 1;
@@ -114,7 +174,16 @@
     border-radius: 10px;
     display: none;
 }
-.container >.cart >.text{
+
+.container>.cart>p {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container>.cart>.text {
     font-size: 16px;
     font-weight: 800;
     font-family: Arial, Helvetica, sans-serif;
@@ -122,7 +191,8 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
-.container> .cart >#cart-root{
+
+.container>.cart>#cart-root {
     width: 100%;
     height: 100%;
     display: flex;
@@ -131,41 +201,49 @@
     align-items: center;
     display: none;
 }
-.container> .cart >#cart-root >.img{
+
+.container>.cart>#cart-root>.img {
     display: flex;
     justify-content: space-around;
-    align-items: center;    
+    align-items: center;
     gap: 10px;
 }
-.container> .cart > p{
+
+.container>.cart>p {
     font-size: 16px;
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--Grayish-blue);
 }
-.container> .cart > #cart-root > .img > p{
+
+.container>.cart>#cart-root>.img>p {
     width: 130px;
     height: 50px;
     font-size: 10px;
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--Grayish-blue);
+    display: grid;
+    grid-template-columns: 1, auto;
 }
-.container> .cart >#cart-root > .img > p >.number>.num{
+
+.container>.cart>#cart-root>.img>p>.num {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--Black);
     font-weight: bolder;
 }
-.container> .cart >#cart-root > .img >svg:hover{
+
+.container>.cart>#cart-root>.img>svg:hover {
     cursor: pointer;
 }
-.container> .cart >#cart-root >.img >img{
+
+.container>.cart>#cart-root>.img>img {
     width: 50px;
     height: 50px;
     border-radius: 5px;
 }
 
-.container> .cart >#cart-root > .btn{
+.container>.cart>#cart-root>.btn {
     width: 100%;
     height: 50px;
     background-color: var(--Orange);
@@ -176,7 +254,8 @@
     font-weight: 500;
     cursor: pointer;
 }
-.container> .cart >hr{
+
+.container>.cart>hr {
     border: var(--Light-grayish-blue) 1px solid;
 }
 
@@ -189,6 +268,31 @@
     z-index: 0;
 }
 
+@media screen and (max-width:500px) {
+    .container>.main {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    .container>.main2>.main2-root>.img,
+    .container>.main>.gallery>.img {
+        width: 90%;
+        height: 200px;
+        border-radius: 5px;
+        gap: 50px;
+    }
+
+    .container>.main2>.main2-root>.img>img,
+    .container>.main>.gallery>.img>img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .container>.main {
     width: 80%;
     margin: 50px auto;
@@ -197,34 +301,152 @@
     gap: 20px;
 }
 
+.container>.main2>.main2-root>.img,
 .container>.main>.gallery>.img {
     width: 300px;
     height: 300px;
     overflow: hidden;
     border-radius: 10px;
+    /* position: absolute; */
+    inset: 0 0 0 0;
+
 }
 
+.container>.main2>.main2-root>.img>img,
 .container>.main>.gallery>.img>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    background-color: black;
 }
 
+.container>.main2 .next .main2-root>.img:nth-child(1) img,
+.container>.main .next .gallery>.img:nth-child(1) img {
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    border-radius: 20px;
+    animation: showimage 0.5 linear 1 forwards;
+}
+
+@keyframes showimage {
+    to {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+
+.container>.main2 .next .main2-root>.img:nth-child(1),
+.container>.main .next .gallery>.img:nth-child(1) {
+    z-index: 0;
+}
+
+.container>.main2 .next .main2-root>.img:nth-child(1) img,
+.container>.main .next .gallery>.img:nth-child(1) img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outimage 0.5s linear 1 forwards;
+}
+
+@keyframes outimage {
+    to {
+        width: 150px;
+        height: 220px;
+        position: absolute;
+        left: 50%;
+        bottom: 50px;
+        border-radius: 20px;
+
+    }
+}
+
+.container>.main2>.main2-root>.gallery,
 .container>.main>.gallery>.second_gallery {
     width: 300px;
     padding: 20px 0px 0px 0px;
     display: flex;
     justify-content: space-between;
+    flex-shrink: 0;
+    position: relative;
+    position: absolute;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
 }
 
+.container .next .main2>.main2-root>.gallery:nth-last-child(1),
+.container .next .main>.gallery>.second_gallery:nth-last-child(1) {
+    width: 0;
+    overflow: hidden;
+    animation: showthumbnaill .5s linear 1 forwards;
+}
+
+@keyframes showthumbnaill {
+    to {
+        width: 150px;
+    }
+}
+
+.container>.main2 .main2-root .next .gallery,
+.container>.main .next .gallery>.second_gallery {
+    transform: translateX(150px);
+    animation: transformthumbnaill .5s linear 1 forwards;
+}
+
+@keyframes transformthumbnaill {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.container>.main2>.main2-root .prev .gallery:nth-child(1),
+.container>.main .prev .gallery>.second_gallery:nth-child(1) {
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: showthumbnaill .5s linear 1 forwards;
+}
+
+.container>.main2>.main2-root>.gallery>img,
 .container>.main>.gallery>.second_gallery>img {
     width: 63px;
     border-radius: 5px;
+
+    /* object-fit: cover; */
+    background-color: black;
 }
 
+.container>.main2>.main2-root>.gallery>img:hover,
 .container>.main>.gallery>.second_gallery>img:hover {
     cursor: pointer;
     filter: saturate(0.5) brightness(1.3);
+}
+
+@media screen and (max-width:480px) {
+    .container>.main>.info {
+        width: 100%;
+    }
+
+    .container>.main>.info>.heading_text {
+        width: 100vw;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .container>.main>.info>.p_text {
+        width: 95vw;
+        font-size: 12px;
+        font-weight: 300;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--Grayish-blue);
+    }
 }
 
 .container>.main>.info {
@@ -278,6 +500,41 @@
     border-radius: 5px;
 }
 
+@media screen and (max-width:480px) {
+    .container>.main>.amount {
+    width: 100vw;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+    .container>.main>.info>.amount>.price {
+
+        font-size: 1.5rem;
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--Black);
+    }
+    .container>.main>.info>.amount>.price>span {
+        background-color: var(--Black);
+        color: var(--White);
+        margin: 0px 20px;
+        padding: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+    .container>.main>.info>.button {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+    .container>.main>.info>.button>.num{
+        width: 90vw;
+    }
+    .container>.main>.info>.button>.cart>button{
+        width: 90vw;
+    }
+}
+
 .container>.main>.info>.amount>.old_price {
     color: var(--Dark-grayish-blue);
     text-decoration: line-through;
@@ -290,7 +547,7 @@
 
 .container>.main>.info>.button>.num {
     display: flex;
-    width: 100px;
+    width: 100%;
     background-color: var(--Light-grayish-blue);
     align-items: center;
     justify-content: space-around;
@@ -325,29 +582,41 @@
     background-color: var(--Pale-orange);
     cursor: pointer;
 }
-
-.container > .main2 {
+@media screen and (max-width:480px) {
+    .container>.main2{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        padding: 0;
+        gap: 0;
+    }
+    .container>.main2>.main2-root{
+        width: 100vw;
+    }
+}
+.container>.main2 {
     width: 100%;
     height: 100%;
-    display: none;
     position: absolute;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.822);
-    z-index: 5;
+    z-index: 100;
     display: none;
+    justify-content: space-around;
+    gap: 20px;
+    /* padding: 0 450px; */
 }
-.container > .main2 > .main2-root{
+
+.container>.main2>.main2-root {
     width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 5;
 }
-.container > .main2 > .main2-root >.svg3{
+
+.container>.main2>.main2-root>.svg3 {
     width: 100%;
     display: flex;
     align-items: flex-end;
@@ -355,68 +624,99 @@
     color: var(--White);
     margin-bottom: 10px;
 }
-.container > .main2 > .main2-root >.svg3 >svg:hover{
+
+.container>.main2>.main2-root>.svg3>svg:hover {
     fill: var(--Orange);
-    cursor: pointer;;
+    cursor: pointer;
 }
-.container > .main2 > .main2-root > .img {
+
+.container>.main2>.main2-root>.img {
     display: flex;
-    align-items: center;
+    /* align-items: center;
+ overflow: hidden;
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+position: relative; */
 }
-.container > .main2 > .main2-root > .img > .svg1,
-.container > .main2 > .main2-root > .img > .svg2{
+
+.container>.main2>.svg1,
+.container>.main2>.svg2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width:40px;
+    width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: var(--White);
     z-index: 1;
     position: relative;
+
 }
 
-.container > .main2 > .main2-root > .img > .svg1 > svg,
-.container > .main2 > .main2-root > .img > .svg2 >svg:hover{
-    
+.container>.main2>.svg1>svg,
+.container>.main2>.svg2>svg:hover {
     cursor: pointer;
 }
-.container > .main2 > .main2-root > .img > .svg1{
-    left: 20px;
+
+.container>.main2>.svg1>svg {
+    left: 100px;
 }
-.container > .main2 > .main2-root > .img > .svg2{
+
+.container>.main2>.svg2 {
     right: 20px;
 }
-.container > .main2 > .main2-root > .img > img{
-    width: 350px;
-    height: 350px;
+@media screen and (max-width:480px) {
+    .container>.main2{
+        width: 100vw;
+        height: 100%;
+    }
+    .container>.main2>.main2-root{
+        width: 100vw;
+        height: 100vw;
+    }
+    .container>.main2>.main2-root>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.container>.main2>.main2-root>img {
+    width: 500px;
+    height: 100%;
     border-radius: 10px;
     z-index: 0;
-
+    object-fit: cover;
 }
-.container > .main2 > .main2-root > .gallery {
-    width: 100%;
+
+.container>.main2>.main2-root>.gallery {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: relative;
 }
-.container > .main2 > .main2-root > .gallery > img{
+
+.container>.main2>.main2-root>.gallery>img {
     margin-top: 20px;
     width: 80px;
     border-radius: 5px;
     height: 85px;
 }
-.container > .main2 > .main2-root > .gallery > img:hover{
+
+.container>.main2>.main2-root>.gallery>img:hover {
     cursor: pointer;
     filter: saturate(0.5) brightness(1.3);
 }
-.active{
+
+.active {
     border: 2px solid var(--Orange);
 }
-.Display{
+
+.Display {
     display: block;
     background-color: var(--Orange);
 }
-.remove{
+
+.remove {
     display: none;
 }
